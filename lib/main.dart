@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import './product_manager.dart';
+import 'package:flutter/rendering.dart';
 
-void main() => runApp(MyApp());
+import './pages/home.dart';
+
+void main() {
+  // debugPaintSizeEnabled = true; // 布局线框
+  // debugPaintBaselinesEnabled = true; //
+  // debugPaintPointersEnabled = true; // 查看事件有没有绑定到buttong之类的。
+  runApp(MyApp());
+}
 
 // StatefulWidget: 需要更改内部数据
 // StatelessWidget: 内部数据无需改变
@@ -12,11 +19,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+        theme: ThemeData(primarySwatch: Colors.deepPurple),
+        // debugShowMaterialGrid: true, // 网格
         title: 'Welcome to Flutter',
-        home: Scaffold(
-            appBar: AppBar(
-              title: Text('Welcome to Flutter'),
-            ),
-            body: ProductManager('Food Tester')));
+        home: HomePage());
   }
 }
