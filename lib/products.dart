@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './pages/product.dart';
 class Products extends StatelessWidget {
-  final List<String> products;
+  final List<Map<String, String>> products;
 
   //Constructor
   Products(this.products);
@@ -10,15 +10,17 @@ class Products extends StatelessWidget {
       child: Column(
         children: <Widget>[
           // 需要在pubspec.yaml里，先设置图片路径才可以引入
-          Image.asset('assets/img/banner.jpg'),
-          Text(products[index]),
+          Image.asset(products[index]['imgUrl']),
+          Text(products[index]['title']),
           ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[
               FlatButton(
                 child: Text('Show Details'),
                 onPressed: ()=> Navigator.push(context, MaterialPageRoute(
-                  builder: (BuildContext context) => ProductPage()
+                  builder: (BuildContext context) => ProductPage(
+                    products[index]['title'],products[index]['imgUrl']
+                  )
                 )),
               )
             ],

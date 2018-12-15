@@ -4,11 +4,10 @@ import '../product_manager.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
-        body: ProductManager('New Food'));
+        body: ProductManager({'title': 'First', 'imgUrl': 'assets/img/banner.jpg'}));
   }
 }

@@ -17,9 +17,11 @@ class MyApp extends StatelessWidget {
   // StatelessWidget的子类必须重写build方法
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
-        theme: ThemeData(primarySwatch: Colors.deepPurple),
+        theme: ThemeData(
+          brightness: Brightness.light,
+          primarySwatch: Colors.deepOrange,
+          accentColor: Colors.deepPurple),
         // debugShowMaterialGrid: true, // 网格
         title: 'Welcome to Flutter',
         home: HomePage());
